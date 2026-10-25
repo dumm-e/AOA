@@ -25,12 +25,14 @@ Compile each `.c` file separately. The supplied study notes follow.
 - temp: Helps swap the current element with the minimum element.
 - Time complexity: \(O(n^2)\) in best, average, and worst cases.
 In simple words: Find the smallest element and place it at the beginning. Repeat until sorted.
+
 2. Insertion Sort
 - key: Stores the current element to be inserted in its correct position.
 - while loop: Shifts elements larger than the key one position to the right.
 - a[j+1] = key: Places the key in its correct position.
 - Time complexity: Best \(O(n)\); average and worst \(O(n^2)\).
 In simple words: Like arranging playing cards in your hand, insert each element into the sorted portion.
+
 3. Merge Sort — Divide and Conquer
 - Divide: Split the array into two halves.
 - Recursion: Sort each half by calling the function again.
@@ -38,12 +40,14 @@ In simple words: Like arranging playing cards in your hand, insert each element 
 - Base condition: if(l < r) stops dividing when a part contains one element.
 - Time complexity: \(O(n\log n)\) in all cases.
 In simple words: Divide the array, sort the small parts, and merge them in order.
+
 4. Quick Sort — Divide and Conquer
 - Pivot: The element used to divide the array into smaller and larger elements.
 - Partitioning: Rearranges elements around the pivot.
 - Recursion: Sorts the left and right partitions.
 - Time complexity: Average \(O(n\log n)\); worst \(O(n^2)\).
 In simple words: Choose a pivot, arrange elements around it, and repeat for both sides.
+
 5. Dijkstra's Algorithm — Single Source Shortest Path
 - d[]: Stores the shortest known distance from the source vertex.
 - vis[]: Marks vertices whose shortest distance has been finalized.
@@ -53,6 +57,7 @@ In simple words: Choose a pivot, arrange elements around it, and repeat for both
 In simple words: Find the shortest paths from one starting vertex to all reachable vertices.
 
 Important: Dijkstra's algorithm requires non-negative edge weights.
+
 6. Minimum Spanning Tree — Prim's Algorithm
 - vis[]: Marks vertices already included in the spanning tree.
 - Minimum edge: Select the cheapest edge connecting a visited vertex to an unvisited vertex.
@@ -60,6 +65,7 @@ Important: Dijkstra's algorithm requires non-negative edge weights.
 - Number of edges: An MST of a connected graph with \(V\) vertices contains \(V-1\) edges.
 - Time complexity: \(O(V^2)\) for your adjacency-matrix implementation.
 In simple words: Start from one vertex and grow the tree by adding the cheapest connecting edge.
+
 7. Minimum Spanning Tree — Kruskal's Algorithm
 - Sorting: Arrange all edges in increasing order of weight.
 - find(): Identifies the component to which a vertex belongs.
@@ -81,6 +87,7 @@ Uses vis[]	Uses parent[] and find()
 - Two choices: Include the item or exclude it.
 - Time complexity: \(O(nW)\), where \(n\) is the number of items and \(W\) is the capacity.
 In simple words: Choose items to maximize profit without exceeding the bag's capacity. Each item can be chosen at most once.
+
 9. Floyd–Warshall — All-Pairs Shortest Path
 - k: The intermediate vertex being considered.
 - i: The starting vertex.
@@ -90,6 +97,7 @@ In simple words: Choose items to maximize profit without exceeding the bag's cap
 In simple words: Find the shortest paths between every pair of vertices by checking all possible intermediate vertices.
 
 Difference from Dijkstra: Floyd–Warshall calculates all-pairs shortest paths, while Dijkstra calculates shortest paths from one source.
+
 10. 8 Queens — Backtracking
 - n = 8: Sets the board size to 8 × 8. Change it to 4 for the 4-Queens version.
 - safe(): Checks whether a queen can be placed without attacking another queen.
@@ -97,6 +105,7 @@ Difference from Dijkstra: Floyd–Warshall calculates all-pairs shortest paths, 
 - Backtracking: If no position works, the function returns and tries another position.
 - Time complexity: Exponential in the general case; the program may stop early when it finds the first solution.
 In simple words: Place one queen per row, checking columns and diagonals. If a placement fails, go back and try another.
+
 11. Graph Coloring — Backtracking
 - Adjacency matrix: Represents which vertices are connected.
 - color[]: Stores the color assigned to each vertex.
@@ -104,6 +113,7 @@ In simple words: Place one queen per row, checking columns and diagonals. If a p
 - Backtracking: Removes a color and tries another if the remaining vertices cannot be colored.
 - Time complexity: Worst case \(O(m^V)\), where \(m\) is the number of colors and \(V\) is the number of vertices.
 In simple words: Assign colors to vertices so that connected vertices have different colors, using no more than the available number of colors.
+
 12. KMP — Pattern Matching
 - Text: The full string in which you search.
 - Pattern: The smaller string you want to find.
