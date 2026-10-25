@@ -1,0 +1,3 @@
+#include <stdio.h>
+#define N 10
+int a[N][N],color[N],n,m;int safe(int v,int c){int i;for(i=0;i<n;i++)if(a[v][i]&&color[i]==c)return 0;return 1;}int solve(int v){int c;if(v==n)return 1;for(c=1;c<=m;c++)if(safe(v,c)){color[v]=c;if(solve(v+1))return 1;color[v]=0;}return 0;}int main(void){int i,j;printf("Vertices (1-10): ");if(scanf("%d",&n)!=1||n<1||n>N)return 1;printf("Number of colors: ");if(scanf("%d",&m)!=1||m<1)return 1;printf("Adjacency matrix (0 or 1):\n");for(i=0;i<n;i++)for(j=0;j<n;j++)if(scanf("%d",&a[i][j])!=1)return 1;if(solve(0)){for(i=0;i<n;i++)printf("Vertex %d = Color %d\n",i,color[i]);}else printf("Coloring not possible\n");return 0;}

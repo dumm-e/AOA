@@ -1,0 +1,2 @@
+#include <stdio.h>
+int a[50],t[50];void merge(int l,int m,int r){int i=l,j=m+1,k=l;while(i<=m&&j<=r)t[k++]=(a[i]<=a[j])?a[i++]:a[j++];while(i<=m)t[k++]=a[i++];while(j<=r)t[k++]=a[j++];for(i=l;i<=r;i++)a[i]=t[i];}void sort(int l,int r){if(l<r){int m=l+(r-l)/2;sort(l,m);sort(m+1,r);merge(l,m,r);}}int main(void){int n,i;printf("Enter number of elements: ");if(scanf("%d",&n)!=1||n<1||n>50)return 1;printf("Enter elements: ");for(i=0;i<n;i++)if(scanf("%d",&a[i])!=1)return 1;sort(0,n-1);printf("Sorted array: ");for(i=0;i<n;i++)printf("%d ",a[i]);printf("\n");return 0;}

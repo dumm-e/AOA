@@ -1,0 +1,4 @@
+#include <stdio.h>
+#define NV 20
+#define NE 50
+int p[NV];int find(int x){while(p[x]!=x){p[x]=p[p[x]];x=p[x];}return x;}int main(void){int u[NE],v[NE],w[NE],n,m,i,j,t,a,b,cost=0,count=0;printf("Vertices and edges: ");if(scanf("%d%d",&n,&m)!=2||n<1||n>NV||m<0||m>NE)return 1;printf("Edges (u v weight), vertices 0..n-1:\n");for(i=0;i<m;i++)if(scanf("%d%d%d",&u[i],&v[i],&w[i])!=3||u[i]<0||u[i]>=n||v[i]<0||v[i]>=n)return 1;for(i=0;i<n;i++)p[i]=i;for(i=0;i<m-1;i++)for(j=0;j<m-i-1;j++)if(w[j]>w[j+1]){t=w[j];w[j]=w[j+1];w[j+1]=t;t=u[j];u[j]=u[j+1];u[j+1]=t;t=v[j];v[j]=v[j+1];v[j+1]=t;}for(i=0;i<m&&count<n-1;i++){a=find(u[i]);b=find(v[i]);if(a!=b){p[a]=b;printf("%d - %d : %d\n",u[i],v[i],w[i]);cost+=w[i];count++;}}if(count==n-1)printf("Minimum cost = %d\n",cost);else printf("Graph is disconnected\n");return 0;}

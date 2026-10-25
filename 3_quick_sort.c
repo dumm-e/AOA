@@ -1,0 +1,2 @@
+#include <stdio.h>
+int a[50];void quick(int l,int r){int i=l,j=r,p=a[l+(r-l)/2],t;while(i<=j){while(a[i]<p)i++;while(a[j]>p)j--;if(i<=j){t=a[i];a[i]=a[j];a[j]=t;i++;j--;}}if(l<j)quick(l,j);if(i<r)quick(i,r);}int main(void){int n,i;printf("Enter number of elements: ");if(scanf("%d",&n)!=1||n<1||n>50)return 1;printf("Enter elements: ");for(i=0;i<n;i++)if(scanf("%d",&a[i])!=1)return 1;quick(0,n-1);printf("Sorted array: ");for(i=0;i<n;i++)printf("%d ",a[i]);printf("\n");return 0;}
