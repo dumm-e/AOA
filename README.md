@@ -123,19 +123,32 @@ In simple words: Assign colors to vertices so that connected vertices have diffe
 In simple words: Search for a pattern efficiently by reusing previous matching information.
 
 Last-minute complexity cheat sheet
-Algorithm	Time complexity
+Algorithm	Time complexity:
+
 Selection Sort	\(O(n^2)\)
+
 Insertion Sort	Best \(O(n)\), worst \(O(n^2)\)
+
 Merge Sort	\(O(n\log n)\)
+
 Quick Sort	Average \(O(n\log n)\), worst \(O(n^2)\)
+
 Dijkstra (matrix)	\(O(V^2)\)
+
 Prim's (matrix)	\(O(V^2)\)
+
 Kruskal's	\(O(E\log E)\)
+
 0/1 Knapsack	\(O(nW)\)
+
 Floyd–Warshall	\(O(V^3)\)
+
 N-Queens	Exponential, worst case
+
 Graph Coloring	\(O(m^V)\), worst case
+
 KMP	\(O(n+m)\)
+
 
 Five important viva differences to memorize
 1. Greedy vs Dynamic Programming: Greedy makes a locally best choice; dynamic programming solves and reuses smaller subproblems.
